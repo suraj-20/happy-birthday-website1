@@ -38,12 +38,17 @@ const ideaTextTrans = {
 };
 
 const rotateEmoji = {
-    initial: { rotate: 10 },
+    initial: { rotate: 0 },
     animate: {
-        rotate: [10, 20, -20, 15, -15, 0],
-        transition: { duration: 1, repeat: Infinity, repeatDelay: 1 }
+        rotate: 90,
+        transition: { duration: 0.5, ease: "easeInOut" }
+    },
+    exit: {
+        rotate: 0,
+        transition: { duration: 0.3, ease: "easeInOut" }
     }
 };
+
 
 // const eightVariant = {
 //     initial: { opacity: 0, scale: 1 },
@@ -174,12 +179,12 @@ const HappyBirthday = () => {
             <div className='absolute left-0 right-0 top-[20vh]'>
 
                 {visibleSteps.includes(1) && currentStep === 1 && (
-                    <h1 className='text-[4.5rem] leading-none font-normal text-[#3085d6] transition-opacity duration-500'>Hi <span>Jessi.</span></h1>
+                    <h1 className='text-[4.5rem] leading-none font-medium text-[#3085d6] transition-opacity duration-500'>Hi <span>Jessi.</span></h1>
                 )}
 
                 {visibleSteps.includes(2) && currentStep === 1 && (
                     <motion.p
-                        className='text-[3rem] mt-4 leading-none font-normal'
+                        className='text-[3rem] mt-4 leading-none font-medium'
                         variants={ideaTextTrans}
                         initial="initial"
                         animate="animate"
@@ -191,7 +196,7 @@ const HappyBirthday = () => {
 
                 {currentStep === 2 && (
                     <motion.p
-                        className='text-[3rem] font-normal fade-in'
+                        className='text-[3rem] font-medium fade-in'
                         variants={ideaTextTrans}
                         initial="initial"
                         animate="animate"
@@ -203,7 +208,7 @@ const HappyBirthday = () => {
 
                 {currentStep === 3 && (
                     <div className="border w-2/4 h-[100px] p-3 m-auto rounded-sm relative fade-in">
-                        <p className="text-sm font-normal text-left">
+                        <p className="text-sm font-medium text-left">
                             {typedText}
                             <span className="blinking-cursor">|</span>
                         </p>
@@ -212,7 +217,7 @@ const HappyBirthday = () => {
                             <button
                                 onClick={handleSend}
                                 disabled={isTyping}
-                                className={`absolute -bottom-12 right-0 px-6 text-[14px] rounded-sm font-normal text-white 
+                                className={`absolute -bottom-12 right-0 px-6 text-[14px] rounded-sm font-medium text-white 
                                 ${isTyping ? 'bg-[#15a1ed8c] cursor-not-allowed' : 'bg-[#15a1ed] cursor-pointer'} fade-in`}
                             >
                                 Send
@@ -223,11 +228,11 @@ const HappyBirthday = () => {
 
                 {currentStep === 4 && (
                     <div className="flex flex-col items-center">
-                        {insideStep === 1 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-normal">That's what I was going to do.</motion.p>}
-                        {insideStep === 2 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-normal">But then I stopped.</motion.p>}
-                        {insideStep === 3 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-normal text-center  leading-relaxed">I realised, I wanted to do something <br /> <strong className="inline-block bg-[#15a1ed] rounded-sm text-[#fff] px-[10px] py-[2px]">special</strong>.</motion.p>}
-                        {insideStep === 4 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-normal">Because,</motion.p>}
-                        {insideStep === 5 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[4rem] font-normal">You are Special <motion.span
+                        {insideStep === 1 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-medium">That's what I was going to do.</motion.p>}
+                        {insideStep === 2 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-medium">But then I stopped.</motion.p>}
+                        {insideStep === 3 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-medium text-center  leading-relaxed">I realised, I wanted to do something <br /> <strong className="inline-block bg-[#15a1ed] rounded-sm text-[#fff] px-[10px] py-[2px]">special</strong>.</motion.p>}
+                        {insideStep === 4 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[2rem] font-medium">Because,</motion.p>}
+                        {insideStep === 5 && <motion.p variants={ideaTextTrans} initial="initial" animate="animate" exit="exit" className="text-[4rem] font-medium">You are Special <motion.span
                             variants={rotateEmoji}
                             initial="initial"
                             animate="animate"
@@ -239,7 +244,7 @@ const HappyBirthday = () => {
                             {insideStep === 6 && (
                                 <motion.p
                                     key="step-6"
-                                    className="text-[15rem] leading-normal font-normal top-20 fade-in flex gap-6"
+                                    className="text-[15rem] leading-normal font-medium top-20 fade-in flex gap-6"
                                     initial="initial"
                                     animate="animate"
                                     exit="exit"
@@ -352,9 +357,9 @@ const HappyBirthday = () => {
 
                 {currentStep === 7 && (
                     <>
-                        <div className="text-center flex flex-col items-center justify-center gap-2 fade-in">
-                            <p className='text-2xl font-normal'>Okay, now come back and tell me if you liked it.</p>
-                            <p className='text-2xl font-normal cursor-pointer' onClick={() => {
+                        <div className="text-center flex flex-col items-center justify-center gap-4 fade-in">
+                            <p className='text-3xl font-medium'>Okay, now come back and tell me if you liked it.</p>
+                            <p className='text-3xl font-medium cursor-pointer' onClick={() => {
                                 setCurrentStep(1);
                                 setVisibleSteps([]);
                                 setInsideStep(1);
@@ -365,9 +370,9 @@ const HappyBirthday = () => {
                                 variants={rotateEmoji}
                                 initial="initial"
                                 animate="animate"
-                                className="inline-block origin-bottom"
+                                className="inline-block origin-bottom font-medium text-[5rem]"
                             >
-                                <span className='text-red-500'>:</span>)
+                                <span className='text-red-500 font-bold relative bottom-[3px]'>:</span>)
                             </motion.p>
                         </div>
                     </>
