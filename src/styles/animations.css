@@ -1,0 +1,96 @@
+/* Step-wise fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Typewriter effect for text */
+.blinking-cursor {
+  display: inline-block;
+  width: 0.5px;
+  /* background-color: black; */
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Balloon animation */
+.baloons-rise {
+  pointer-events: none; /* allows clicking through balloons */
+  z-index: 10;
+}
+
+.baloons-rise img {
+  position: absolute;
+  bottom: -100px;
+  width: 400px;
+  animation: riseBalloon 6s ease-in forwards;
+  opacity: 0;
+}
+
+@keyframes riseBalloon {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh); /* Rise off the screen */
+    opacity: 0;
+  }
+}
+
+/* Cake animation */
+.cake {
+  width: 120px;
+  height: 100px;
+  background: #ffcccb;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  animation: cakePop 1s ease-out forwards;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.cake::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 8px;
+  height: 20px;
+  background-color: #ff0;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+@keyframes cakePop {
+  0% {
+    transform: scale(0.5) translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Message fade-in */
+.message {
+  font-size: 1.5rem;
+  color: #e91e63;
+  text-align: center;
+  max-width: 80%;
+  animation: fadeIn 1.5s ease-in forwards;
+}
