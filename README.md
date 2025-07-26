@@ -41,13 +41,10 @@ yarn install
 
 ## 🧩 Customization
 
-Update the fullText string for your own birthday message.
-
-Add more animation steps inside BirthdaySteps.tsx.
-
-Customize timing/delay in setTimeout and framer-motion transitions.
-
-Style freely with Tailwind or your own CSS framework.
+- Update the fullText string for your own birthday message.
+- Add more animation steps inside BirthdaySteps.tsx.
+- Customize timing/delay in setTimeout and framer-motion transitions.
+- Style freely with Tailwind or your own CSS framework.
 
 ## 👨‍💻 Author
 Created with ❤️ by Suraj
